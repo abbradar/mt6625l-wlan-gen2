@@ -177,7 +177,7 @@ static int netdev_event(struct notifier_block *nb, unsigned long notification, v
 			ifa->ifa_address, notification, prDev->name);
 	if (!fgIsUnderSuspend)
 		return NOTIFY_DONE;
-	if ((strncmp(prDev->name, "p2p", 3) != 0) && (strncmp(prDev->name, "wlan", 4) != 0)) {
+	if ((strncmp(prDev->name, "mtkp2p", 6) != 0) && (strncmp(prDev->name, "mtkwlan", 7) != 0)) {
 		DBGLOG(REQ, WARN, "netdev_event: not our device\n");
 		return NOTIFY_DONE;
 	}
@@ -305,12 +305,12 @@ static int net6dev_event(struct notifier_block *nb, unsigned long notification, 
 		return NOTIFY_DONE;
 	}
 
-	if ((strncmp(prDev->name, "p2p", 3) != 0) && (strncmp(prDev->name, "wlan", 4) != 0)) {
+	if ((strncmp(prDev->name, "mtkp2p", 6) != 0) && (strncmp(prDev->name, "mtkwlan", 7) != 0)) {
 		DBGLOG(REQ, INFO, "net6dev_event: xxx\n");
 		return NOTIFY_DONE;
 	}
 
-	if (strncmp(prDev->name, "p2p", 3) == 0) {
+	if (strncmp(prDev->name, "mtkp2p", 6) == 0) {
 		/* because we store the address of prGlueInfo in p2p's private date of net device */
 		/* *((P_GLUE_INFO_T *) netdev_priv(prGlueInfo->prP2PInfo->prDevHandler)) = prGlueInfo; */
 		prGlueInfo = *((P_GLUE_INFO_T *) netdev_priv(prDev));

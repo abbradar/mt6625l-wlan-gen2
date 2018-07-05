@@ -40,11 +40,11 @@
 ********************************************************************************
 */
 
-#define P2P_MODE_INF_NAME "p2p%d"
+#define P2P_MODE_INF_NAME "mtkp2p%d"
 #if CFG_TC1_FEATURE
-#define AP_MODE_INF_NAME "wlan%d"
+#define AP_MODE_INF_NAME "mtkwlan%d"
 #else
-#define AP_MODE_INF_NAME "ap%d"
+#define AP_MODE_INF_NAME "mtkap%d"
 #endif
 /* #define MAX_INF_NAME_LEN 15 */
 /* #define MIN_INF_NAME_LEN 1 */

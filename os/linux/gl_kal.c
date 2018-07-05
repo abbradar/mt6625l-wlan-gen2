@@ -4176,8 +4176,8 @@ BOOLEAN kalIndicateAgpsNotify(P_ADAPTER_T prAdapter, UINT_8 cmd, PUINT_8 data, U
 		goto nla_put_failure;
 	if (unlikely(nla_put(skb, MTK_ATTR_AGPS_IFINDEX, sizeof(UINT_32), &prGlueInfo->prDevHandler->ifindex) < 0))
 		goto nla_put_failure;
-	/* currently, the ifname maybe wlan0, p2p0, so the maximum name length will be 5 bytes */
-	if (unlikely(nla_put(skb, MTK_ATTR_AGPS_IFNAME, 5, prGlueInfo->prDevHandler->name) < 0))
+	/* currently, the ifname maybe mtkwlan0, mtkp2p0, so the maximum name length will be 8 bytes */
+	if (unlikely(nla_put(skb, MTK_ATTR_AGPS_IFNAME, 8, prGlueInfo->prDevHandler->name) < 0))
 		goto nla_put_failure;
 	cfg80211_testmode_event(skb, GFP_KERNEL);
 	return TRUE;
@@ -4370,13 +4370,13 @@ int kalMetInitProcfs(IN P_GLUE_INFO_T prGlueInfo)
 		return -ENOENT;
 	}
 	/*
-	 * Directory: Root (/proc/net/wlan0)
+	 * Directory: Root (/proc/net/mtkwlan0)
 	 */
-	pMetProcDir = proc_mkdir("wlan0", init_net.proc_net);
+	pMetProcDir = proc_mkdir("mtkwlan0", init_net.proc_net);
 	if (pMetProcDir == NULL)
 		return -ENOENT;
 	/*
-	   /proc/net/wlan0
+	   /proc/net/mtkwlan0
 	   |-- met_ctrl         (PROC_MET_PROF_CTRL)
 	   |-- met_port         (PROC_MET_PROF_PORT)
 	 */
@@ -4398,8 +4398,8 @@ int kalMetRemoveProcfs(void)
 	}
 	remove_proc_entry(PROC_MET_PROF_CTRL, pMetProcDir);
 	remove_proc_entry(PROC_MET_PROF_PORT, pMetProcDir);
-	/* remove root directory (proc/net/wlan0) */
-	remove_proc_entry("wlan0", init_net.proc_net);
+	/* remove root directory (proc/net/mtkwlan0) */
+	remove_proc_entry("mtkwlan0", init_net.proc_net);
 	/* clear MetGlobalData */
 	pMetGlobalData = NULL;
 

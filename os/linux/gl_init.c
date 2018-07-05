@@ -854,7 +854,7 @@ const UINT_32 mtk_cipher_suites[5] = {
 
 /*********************************************************/
 
-#define NIC_INF_NAME    "wlan%d"	/* interface name */
+#define NIC_INF_NAME    "mtkwlan%d"	/* interface name */
 #if CFG_TC1_FEATURE
 #define NIC_INF_NAME_IN_AP_MODE  "legacy%d"
 #endif
@@ -1591,7 +1591,7 @@ static void createWirelessDevice(void)
 
 
 	/* <1.2> Create wiphy */
-	prWiphy = wiphy_new(&mtk_wlan_ops, sizeof(GLUE_INFO_T));
+	prWiphy = wiphy_new_nm(&mtk_wlan_ops, sizeof(GLUE_INFO_T), "mtkphy0");
 	if (!prWiphy) {
 		DBGLOG(INIT, ERROR, "Allocating memory to wiphy device failed\n");
 		goto free_wdev;
@@ -1960,7 +1960,7 @@ int wlanHardStartXmit(struct sk_buff *prSkb, struct net_device *prDev)
 		if (u2QueueIdx < CFG_MAX_TXQ_NUM) {
 			if (prGlueInfo->ai4TxPendingFrameNumPerQueue[NETWORK_TYPE_AIS_INDEX][u2QueueIdx] >=
 			    CFG_TX_STOP_NETIF_PER_QUEUE_THRESHOLD) {
-				DBGLOG(TX, INFO, "netif_stop_subqueue for wlan0, Queue len: %d\n",
+				DBGLOG(TX, INFO, "netif_stop_subqueue for mtkwlan0, Queue len: %d\n",
 					prGlueInfo->ai4TxPendingFrameNumPerQueue[NETWORK_TYPE_AIS_INDEX][u2QueueIdx]);
 
 				netif_stop_subqueue(prDev, u2QueueIdx);

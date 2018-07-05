@@ -79,7 +79,7 @@
 #define PROC_DBG_LEVEL_NAME						"dbgLevel"
 #define PROC_NEED_TX_DONE						"TxDoneCfg"
 #define PROC_AUTO_PER_CFG						"autoPerCfg"
-#define PROC_ROOT_NAME			"wlan"
+#define PROC_ROOT_NAME			"mtkwlan"
 #define PROC_CMD_DEBUG_NAME		"cmdDebug"
 
 #define PROC_MCR_ACCESS_MAX_USER_INPUT_LEN      20

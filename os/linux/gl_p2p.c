@@ -1170,7 +1170,7 @@ BOOLEAN glP2pCreateWirelessDevice(P_GLUE_INFO_T prGlueInfo)
 		return FALSE;
 	}
 	/* 1. allocate WIPHY */
-	prWiphy = wiphy_new(&mtk_p2p_ops, sizeof(P_GLUE_INFO_T));
+	prWiphy = wiphy_new_nm(&mtk_p2p_ops, sizeof(P_GLUE_INFO_T), "mtkp2p0");
 	if (!prWiphy) {
 		DBGLOG(P2P, ERROR, "unable to allocate wiphy for p2p\n");
 		goto free_wdev;
@@ -1841,7 +1841,7 @@ int p2pHardStartXmit(IN struct sk_buff *prSkb, IN struct net_device *prDev)
 
 		if (prGlueInfo->ai4TxPendingFrameNumPerQueue[NETWORK_TYPE_P2P_INDEX][u2QueueIdx] >=
 		    CFG_TX_STOP_NETIF_PER_QUEUE_THRESHOLD) {
-			DBGLOG(TX, INFO, "netif_stop_subqueue for p2p0, Queue len: %d\n",
+			DBGLOG(TX, INFO, "netif_stop_subqueue for mtkp2p0, Queue len: %d\n",
 				prGlueInfo->ai4TxPendingFrameNumPerQueue[NETWORK_TYPE_P2P_INDEX][u2QueueIdx]);
 			netif_stop_subqueue(prDev, u2QueueIdx);
 		}
