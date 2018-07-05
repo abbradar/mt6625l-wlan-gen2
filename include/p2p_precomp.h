@@ -25,7 +25,7 @@
 
 #include "gl_p2p_os.h"
 
-#include "debug.h"
+#include "mtk_debug.h"
 
 #include "link.h"
 #include "queue.h"
@@ -102,7 +102,7 @@
 #include "rlm_domain.h"
 #include "rlm_protection.h"
 #include "rlm_obss.h"
-#include "rate.h"
+#include "mgmt_rate.h"
 
 #include "aa_fsm.h"
 

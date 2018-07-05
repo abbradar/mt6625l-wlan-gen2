@@ -609,7 +609,7 @@
 #if (CFG_SUPPORT_TDLS == 1)
 #include "tdls_extr.h"
 #endif
-#include "debug.h"
+#include "mtk_debug.h"
 
 #include "wlan_lib.h"
 #include "wlan_oid.h"

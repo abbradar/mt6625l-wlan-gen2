@@ -65,7 +65,7 @@
 #include "precomp.h"
 
 /* #include "wlan_lib.h" */
-/* #include "debug.h" */
+/* #include "mtk_debug.h" */
 
 /*******************************************************************************
 *                              C O N S T A N T S
