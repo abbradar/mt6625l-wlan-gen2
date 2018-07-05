@@ -4530,13 +4530,10 @@ INT_32 kalHaltLock(UINT_32 waitMs)
 			DBGLOG(INIT, ERROR,
 				"kalIoctl was executed longer than %u ms, show backtrace of tx_thread!\n",
 				kalGetTimeTick() - rHaltCtrl.u4HoldStart);
-			if (prGlueInfo)
-				show_stack(prGlueInfo->main_thread, NULL);
 		} else {
 			DBGLOG(INIT, ERROR, "halt lock held by %s pid %d longer than %u ms!\n",
 				rHaltCtrl.owner->comm, rHaltCtrl.owner->pid,
 				kalGetTimeTick() - rHaltCtrl.u4HoldStart);
-			show_stack(rHaltCtrl.owner, NULL);
 		}
 		return i4Ret;
 	}
