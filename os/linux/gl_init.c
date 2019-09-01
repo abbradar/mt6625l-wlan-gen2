@@ -927,6 +927,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = WIFI_SUBCMD_GET_CHANNEL_LIST
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_get_channel_list
 	},
@@ -935,6 +936,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = WIFI_SUBCMD_SET_COUNTRY_CODE
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_set_country_code
 	},
@@ -944,6 +946,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_GET_CAPABILITIES
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_get_gscan_capabilities
 	},
@@ -952,6 +955,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_SET_CONFIG
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_set_config
 	},
@@ -960,6 +964,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_SET_SCAN_CONFIG
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV,
 		.doit = mtk_cfg80211_vendor_set_scan_config
 	},
@@ -968,6 +973,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_ENABLE_GSCAN
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_enable_scan
 	},
@@ -976,6 +982,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_ENABLE_FULL_SCAN_RESULTS
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_enable_full_scan_results
 	},
@@ -984,6 +991,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_GET_SCAN_RESULTS
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_get_scan_results
 	},
@@ -992,6 +1000,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_SET_SIGNIFICANT_CHANGE_CONFIG
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_set_significant_change
 	},
@@ -1000,6 +1009,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = GSCAN_SUBCMD_SET_HOTLIST
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_set_hotlist
 	},
@@ -1009,6 +1019,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = RTT_SUBCMD_GETCAPABILITY
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_get_rtt_capabilities
 	},
@@ -1018,6 +1029,7 @@ static const struct wiphy_vendor_command mtk_wlan_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = LSTATS_SUBCMD_GET_INFO
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_llstats_get_info
 	},

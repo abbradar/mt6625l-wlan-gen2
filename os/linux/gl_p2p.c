@@ -637,6 +637,7 @@ static const struct wiphy_vendor_command mtk_p2p_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = WIFI_SUBCMD_GET_CHANNEL_LIST
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_get_channel_list
 	},
@@ -645,6 +646,7 @@ static const struct wiphy_vendor_command mtk_p2p_vendor_ops[] = {
 			.vendor_id = GOOGLE_OUI,
 			.subcmd = WIFI_SUBCMD_SET_COUNTRY_CODE
 		},
+		.policy = VENDOR_CMD_RAW_DATA,
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
 		.doit = mtk_cfg80211_vendor_set_country_code
 	},
